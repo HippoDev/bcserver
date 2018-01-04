@@ -44,6 +44,7 @@ export class BuyComponent implements OnInit {
 
         this._buyService.buyTrade(buyJsonInput).subscribe((res) => {
             console.log("success");
+            this.buyForm.reset();
         }, (err) => {
             console.log("error");
         });
