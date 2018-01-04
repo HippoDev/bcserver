@@ -5,10 +5,9 @@ import 'rxjs/add/operator/map';
 import { environment } from './../../../../environments/environment';
 
 @Injectable()
-export class HeaderService {
+export class SidebarService {
 
   constructor(private http: Http) { }
-
 
   getInform(user) {
     let json = {
@@ -31,5 +30,4 @@ export class HeaderService {
     let body = JSON.stringify(json);    
     return this.http.post('http://bcserver:8080/chaincode', body, options).map(res => res.json());
   }
-
 }
