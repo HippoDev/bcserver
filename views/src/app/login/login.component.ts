@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     @ViewChild('username')  public username: ElementRef;
     constructor(fb: FormBuilder, public router: Router) {
         this.form = fb.group({
-            username: [null]
+            username: [null, Validators.compose([Validators.required])]
           });
     }
 
