@@ -14,7 +14,7 @@ export class HistoryComponent implements OnInit {
     time;
     constructor(private _HistoryService:HistoryService, fb: FormBuilder) {
         let currentDate = new Date();
-        let current= currentDate.getFullYear()+"-"+('0'+(currentDate.getMonth()+1)).slice(-2)+"-"+('0'+currentDate.getDate()).slice(-2)
+        let current= currentDate.getFullYear()+"-"+('0'+(currentDate.getMonth()+1)).slice(-2)+"-"+('0'+(currentDate.getDate()+2)).slice(-2)
         console.log(current)
         this.time = fb.group({
             from: ["2011-01-01"],
