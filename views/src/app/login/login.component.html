@@ -9,7 +9,7 @@
                         <input formControlName="username" type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Username">
                     </div>
                 </div>
-                <button type="submit" class="btn rounded-btn" > Log in </button>
+                <button type="submit" class="btn rounded-btn" [disabled]="!form.valid" > Log in </button>
             </form>
         </div>
     </div>
