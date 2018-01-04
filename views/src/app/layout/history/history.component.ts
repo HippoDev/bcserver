@@ -13,18 +13,20 @@ export class HistoryComponent implements OnInit {
     historys;
     time;
     constructor(private _HistoryService:HistoryService, fb: FormBuilder) {
+        let currentDate = new Date();
+        let current= currentDate.getFullYear()+"-"+('0'+(currentDate.getMonth()+1)).slice(-2)+"-"+('0'+currentDate.getDate()).slice(-2)
+        console.log(current)
         this.time = fb.group({
-            from: [],
-            to: []
+            from: ["2011-01-01"],
+            to: [current]
           });
     }
 
     ngOnInit() {
-        //document.getElementById("from").value = "2014-02-09";
+        this.getHistory(this.time.value);
     }
 
     getHistory(form){
-        console.log(form);
         form.name = localStorage.getItem('user');
         let obj = {
             name : form.name,

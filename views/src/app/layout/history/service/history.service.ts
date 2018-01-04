@@ -7,7 +7,7 @@ export class HistoryService {
   constructor(private http:Http) { }
   
   getHistory(obj) {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({  });
     let options = new RequestOptions({ headers: headers });
     return this.http.get('http://192.168.1.107:8080/TxnHistoryRest/txnHistory?id='+obj.name+'&start='+obj.from+'&end='+obj.to, options).map(res => res.json());
   }
