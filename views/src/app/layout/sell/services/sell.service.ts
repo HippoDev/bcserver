@@ -13,6 +13,6 @@ export class SellService {
     let headers = new Headers({ });
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(obj);
-    return this.http.post(environment.hostChain, body, options).map(res => res.json());
+    return this.http.post(environment.hostChain + '/chaincode', body, options).map(res => res.json());
   }
 }
