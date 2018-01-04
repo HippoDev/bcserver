@@ -45,9 +45,7 @@ export class SellComponent implements OnInit {
             },
             "id": 100
         };
-
-        console.log(json)
-
+        
         this._SellService.sell(json).subscribe(function(res) { console.log(res) });
     }
 

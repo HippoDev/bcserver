@@ -12,7 +12,7 @@ export class SellService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(obj);
-    return this.http.post('http://bcserver:7050/chaincode', body, options).map(res => res.json());
+    return this.http.post('http://bcserver:8080/chaincode', body, options).map(res => res.json());
   }
 
 }
