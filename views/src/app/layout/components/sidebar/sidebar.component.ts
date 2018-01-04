@@ -16,7 +16,11 @@ export class SidebarComponent {
     balance: string;
     electricity: string;
 
-    constructor(private sidebarService: SidebarService){}
+    
+
+    constructor(private sidebarService: SidebarService){
+        this.username = localStorage.getItem('user');
+    }
     
     ngOnInit() {
         this.sidebarService.getInform(localStorage.getItem('user')).subscribe(inform => {
@@ -35,5 +39,9 @@ export class SidebarComponent {
         } else {
             this.showMenu = element;
         }
+    }
+
+    onLoggedout() {
+        localStorage.removeItem('isLoggedin');
     }
 }
