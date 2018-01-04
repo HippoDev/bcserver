@@ -26,9 +26,9 @@ export class HeaderService {
       "id": 100
     }
 
-    let headers = new Headers({ });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });      
-    return this.http.post('http://bcserver:8080/chaincode', json, options).map(res => res.json());
+    return this.http.post(environment.hostChain+'/chaincode', json, options).map(res => res.json());
   }
 
 }
