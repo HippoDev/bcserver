@@ -15,7 +15,6 @@ import { AuthGuard } from './shared';
 
 import { SidebarService } from './layout/components/sidebar/sidebar.service';
 
-
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     // for development
