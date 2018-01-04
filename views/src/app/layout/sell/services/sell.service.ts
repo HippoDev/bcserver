@@ -9,10 +9,9 @@ export class SellService {
   constructor(private http: Http) { }
 
   sell(obj) {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ });
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(obj);
     return this.http.post('http://bcserver:8080/chaincode', body, options).map(res => res.json());
   }
-
 }

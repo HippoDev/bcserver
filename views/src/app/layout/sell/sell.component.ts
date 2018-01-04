@@ -30,23 +30,24 @@ export class SellComponent implements OnInit {
 
     sell(obj) {
 
-        let json = 
-        {
-            "jsonrpc": "2.0",
-            "method": "invoke",
-            "params": {
-                "type": 1,
-                "chaincodeID": {
-                    "name": "EGATDemo"
+        let user = localStorage.getItem('user');
+        let json =
+            {
+                "jsonrpc": "2.0",
+                "method": "invoke",
+                "params": {
+                    "type": 1,
+                    "chaincodeID": {
+                        "name": "EGATDemo"
+                    },
+                    "CtorMsg": {
+                        "args": ["sell", user, obj.buyer, obj.electricity, obj.balance]
+                    }
                 },
-                "CtorMsg": {
-                    "args": ["sell", obj.seller, obj.buyer, obj.electricity, obj.balance]
-                }
-            },
-            "id": 100
-        };
-        
-        this._SellService.sell(json).subscribe(function(res) { console.log(res) });
+                "id": 100
+            };
+
+        this._SellService.sell(json).subscribe(function (res) { console.log(res) });
     }
 
 }
