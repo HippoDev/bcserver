@@ -30,7 +30,10 @@ COPY ./views/package.json /usr/src/app/views
 WORKDIR /usr/src/app/views
 
 # Install dependecies
-RUN npm install
+RUN ["./node_modules/@angular/cli/bin/ng", "build", "--target=production"]
+
+# Angular build
+RUN ./ install
 
 # Change directory so that our commands run inside this new directory
 WORKDIR /usr/src/app
