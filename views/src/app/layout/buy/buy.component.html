@@ -1,33 +1,30 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Forms'" [icon]="'fa-edit'"></app-page-header>
+  <div class="card mb-3">
+    <div class="card-header">Buy</div>
+    <div class="card-body">
 
-    <div class="row">
-        <div class="col-lg-6">
-
-            <form [formGroup]="buyForm" (ngSubmit)="onSubmit(buyForm.value)">
-                <div class="col-5">
-                  <label for="buyer">Buyer</label>
-                  <input formControlName="secondaryUser" type="text" class="form-control">
-                </div>
-
-                <div class="col-5">
-                  <label for="electricity">Electricity</label>
-                  <input formControlName="electricity" type="text" class="form-control">
-                </div>
-
-                <div class="col-5">
-                  <label for="balance">Balance</label>
-                  <input formControlName="amount" type="text" class="form-control">
-                </div>
-
-                <br>
-                <div class="col-2">
-                  <button type="submit" class="btn">Submit</button>
-                </div>
-            </form>
-
+      <form [formGroup]="buyForm" (ngSubmit)="onSubmit(buyForm.value)">
+        <div class="col-5">
+          <label for="buyer">Trader</label>
+          <input formControlName="secondaryUser" type="text" class="form-control">
         </div>
-        
+
+        <div class="col-5">
+          <label for="electricity">Electricity</label>
+          <input formControlName="electricity" type="text" class="form-control">
+        </div>
+
+        <div class="col-5">
+          <label for="balance">Balance</label>
+          <input formControlName="amount" type="text" class="form-control">
+        </div>
+
+        <br>
+        <div class="col-2">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+
     </div>
-    <!-- /.row -->
+  </div>
 </div>

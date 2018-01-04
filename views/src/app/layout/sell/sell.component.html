@@ -1,24 +1,26 @@
-<div class="card mb-3">
-  <div class="card-header">Seller</div>
-  <div class="card-body">
+<div [@routerTransition]>
+  <div class="card mb-3">
+    <div class="card-header">Sell</div>
+    <div class="card-body">
 
-    <form [formGroup]="sellForm" (ngSubmit)="sell(sellForm.value)">
-      <div class="col-3">
-        <label for="buyer">Buyer</label>
-        <input formControlName="buyer" type="text" class="form-control">
-      </div>
-      <div class="col-3">
-        <label for="electricity">Electricity</label>
-        <input formControlName="electricity" type="text" class="form-control">
-      </div>
-      <div class="col-3">
-        <label for="balance">Balance</label>
-        <input formControlName="balance" type="text" class="form-control">
-      </div>
-      <br>
-      <div class="col-2">
-        <button type="submit" class="btn">Submit</button>
-      </div>
-    </form>
+      <form [formGroup]="sellForm" (ngSubmit)="sell(sellForm.value)">
+        <div class="col-3">
+          <label for="buyer">Trader</label>
+          <input formControlName="buyer" type="text" class="form-control">
+        </div>
+        <div class="col-3">
+          <label for="electricity">Electricity</label>
+          <input formControlName="electricity" type="text" class="form-control">
+        </div>
+        <div class="col-3">
+          <label for="balance">Balance</label>
+          <input formControlName="balance" type="text" class="form-control">
+        </div>
+        <br>
+        <div class="col-2">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
