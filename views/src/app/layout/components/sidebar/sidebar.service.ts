@@ -28,6 +28,6 @@ export class SidebarService {
     let headers = new Headers({ });
     let options = new RequestOptions({ headers: headers });  
     let body = JSON.stringify(json);    
-    return this.http.post('http://bcserver:8080/chaincode', body, options).map(res => res.json());
+    return this.http.post(environment.hostChain+'/chaincode', body, options).map(res => res.json());
   }
 }
