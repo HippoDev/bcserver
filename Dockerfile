@@ -32,6 +32,9 @@ WORKDIR /usr/src/app/views
 # Install dependecies
 RUN npm install
 
+# Angular build
+RUN ["./node_modules/@angular/cli/bin/ng", "build", "--target=production"]
+
 # Change directory so that our commands run inside this new directory
 WORKDIR /usr/src/app
 
