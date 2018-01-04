@@ -10,8 +10,9 @@ export class BuyServiceService {
   constructor(private _http:Http) { }
 
   buyTrade(obj){
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({  });
     let options = new RequestOptions({ headers: headers });
-    return this._http.post(environment.hostChain + '/chaincode', obj, options).map(res => res.json());
+    let body = JSON.stringify(obj);
+    return this._http.post(environment.hostChain + '/chaincode', body, options).map(res => res.json());
   }
 }

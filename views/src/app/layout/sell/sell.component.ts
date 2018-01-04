@@ -3,6 +3,7 @@ import { routerTransition } from '../../router.animations';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SellService } from './services/sell.service';
 
+
 @Component({
     selector: 'app-sell',
     templateUrl: './sell.component.html',
@@ -47,7 +48,10 @@ export class SellComponent implements OnInit {
                 "id": 100
             };
 
-        this._SellService.sell(json).subscribe(function (res) { console.log(res) });
+        this._SellService.sell(json).subscribe((res)=>{
+            console.log(res);
+            this.sellForm.reset();
+        });
     }
 
 }
