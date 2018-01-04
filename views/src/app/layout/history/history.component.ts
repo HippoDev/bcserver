@@ -20,12 +20,12 @@ export class HistoryComponent implements OnInit {
     }
 
     ngOnInit() {
-        //this.getHistory('b','2016-01-01','2018-10-10');
+        //document.getElementById("from").value = "2014-02-09";
     }
 
     getHistory(form){
         console.log(form);
-        form.name = 'b';
+        form.name = localStorage.getItem('user');
         let obj = {
             name : form.name,
             from : form.from,
