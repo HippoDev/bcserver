@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SellService } from './services/sell.service';
 
 @Component({
     selector: 'app-sell',
@@ -8,7 +10,45 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class SellComponent implements OnInit {
-    constructor() {}
 
-    ngOnInit() {}
+    sellForm: FormGroup;
+
+    constructor(private _SellService: SellService, fb: FormBuilder) {
+
+        this.sellForm = fb.group({
+
+            seller: [Validators.compose.apply([Validators.required])],
+            buyer: [Validators.compose.apply([Validators.required])],
+            electricity: [Validators.compose.apply([Validators.required])],
+            balance: [Validators.compose.apply([Validators.required])]
+        });
+    }
+
+    ngOnInit() {
+
+    }
+
+    sell(obj) {
+
+        let json = 
+        {
+            "jsonrpc": "2.0",
+            "method": "invoke",
+            "params": {
+                "type": 1,
+                "chaincodeID": {
+                    "name": "EGATDemo"
+                },
+                "CtorMsg": {
+                    "args": ["sell", obj.seller, obj.buyer, obj.electricity, obj.balance]
+                }
+            },
+            "id": 100
+        };
+
+        console.log(json)
+
+        this._SellService.sell(json).subscribe(function(res) { console.log(res) });
+    }
+
 }
