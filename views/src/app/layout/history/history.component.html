@@ -2,15 +2,15 @@
     <div class="card mb-3">
         <div class="card-header">History</div>
         <div class="card-body">
-            <form  [formGroup]="time" (ngSubmit)="sendRequest(time.value)">
+            <form  [formGroup]="time" (ngSubmit)="getHistory(time.value)">
                 <div class="row">
                     <div class="col-3">
                         <label>date from :</label>
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" formControlName="from">
                     </div>
                     <div class="col-3">
                         <label>to :</label>
-                        <input type="date" class="form-control">
+                        <input type="date" class="form-control" formControlName="to">
                     </div>
                     <div class="col-2">
                         <input type="submit" class="btn">

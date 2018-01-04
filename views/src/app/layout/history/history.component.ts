@@ -20,18 +20,21 @@ export class HistoryComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        //this.getHistory('b','2016-01-01','2018-10-10');
     }
 
-    getHistory(name,from,to){
+    getHistory(form){
+        console.log(form);
+        form.name = 'b';
         let obj = {
-            name : name,
-            from : from,
-            to : to
+            name : form.name,
+            from : form.from,
+            to : form.to
         }
         this._HistoryService.getHistory(obj).subscribe(res=>{
             this.historys = res.Txn;
             console.log(res.Txn);
         });
+        
     }
 }
