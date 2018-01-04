@@ -4,17 +4,17 @@
     <div class="card-body">
 
       <form [formGroup]="buyForm" (ngSubmit)="onSubmit(buyForm.value)">
-        <div class="col-5">
+        <div class="col-3">
           <label for="buyer">Trader</label>
           <input formControlName="secondaryUser" type="text" class="form-control">
         </div>
 
-        <div class="col-5">
+        <div class="col-3">
           <label for="electricity">Electricity</label>
           <input formControlName="electricity" type="text" class="form-control">
         </div>
 
-        <div class="col-5">
+        <div class="col-3">
           <label for="balance">Balance</label>
           <input formControlName="amount" type="text" class="form-control">
         </div>
