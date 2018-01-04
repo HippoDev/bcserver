@@ -13,8 +13,6 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { HeaderService } from './layout/components/header/header.service';
 
-import { HttpModule } from '@angular/http';
-
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
     // for development

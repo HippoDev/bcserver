@@ -24,6 +24,9 @@ export class HistoryComponent implements OnInit {
 
     ngOnInit() {
         this.getHistory(this.time.value);
+        this._HistoryService.testChaincode().subscribe((res)=>{
+            console.log(res);
+        });
     }
 
     getHistory(form){
