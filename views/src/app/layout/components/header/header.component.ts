@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { HeaderService } from './header.service';
 
 @Component({
     selector: 'app-header',
@@ -11,7 +12,10 @@ export class HeaderComponent implements OnInit {
     pushRightClass: string = 'push-right';
     username: string;
 
-    constructor(private translate: TranslateService, public router: Router) {
+    balance: string;
+    electricity: string;
+
+    constructor(private headerService: HeaderService, private translate: TranslateService, public router: Router) {
 
         this.username = localStorage.getItem('user');
 
@@ -31,7 +35,13 @@ export class HeaderComponent implements OnInit {
         });
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.headerService.getInform(this.username).subscribe(inform => {
+            let res = JSON.parse(inform.result.message);
+            this.balance = res.Amount;
+            this.electricity = res.Electricity;
+        });
+    }
 
     isToggled(): boolean {
         const dom: Element = document.querySelector('body');
@@ -55,4 +65,5 @@ export class HeaderComponent implements OnInit {
     changeLang(language: string) {
         this.translate.use(language);
     }
+
 }

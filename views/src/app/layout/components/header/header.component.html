@@ -6,31 +6,28 @@
     </button>
     <div class="collapse navbar-collapse">
         <form class="form-inline my-2 my-lg-0">
-            
+
         </form>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item d-none d-xl-block">
-                
+
             </li> &nbsp;
             <li class="nav-item">
-                <a class="nav-link mt-1"
-                    style="padding: 0.375rem 1rem !important; border-color: #999;"
-                >
-                    Balance
-            </a>
-            </li> &nbsp;  
+                <a class="nav-link mt-1" style="padding: 0.375rem 1rem !important; border-color: #999;">
+                    Balance {{balance}}
+                </a>
+            </li> &nbsp;
             <li class="nav-item">
-                <a class="nav-link mt-1"
-                    style="padding: 0.375rem 1rem !important; border-color: #999;"
-                >
-                    electricty
-            </a>
-            </li> &nbsp;    
+                <a class="nav-link mt-1" style="padding: 0.375rem 1rem !important; border-color: #999;">
+                    electricity {{electricity}}
+                </a>
+            </li> &nbsp;
             <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
-                    <i class="fa fa-user"></i> {{username}} <b class="caret"></b>
+                    <i class="fa fa-user"></i> {{username}}
+                    <b class="caret"></b>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">                   
+                <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" [routerLink]="['/login']" (click)="onLoggedout()">
                         <i class="fa fa-fw fa-power-off"></i> Log Out
                     </a>

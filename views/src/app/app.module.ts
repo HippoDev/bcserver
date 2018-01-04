@@ -11,6 +11,9 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import { HeaderService } from './layout/components/header/header.service';
+
+import { HttpModule } from '@angular/http';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -21,6 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
     imports: [
+        HttpModule,
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
@@ -38,7 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
         ReactiveFormsModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard, HeaderService],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
