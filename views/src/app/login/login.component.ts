@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {}
 
-    onLoggedin() {
-        alert(this.username);
-        console.log(this.username);
+    onLoggedin(val) {
+        this.router.navigate(['/history']);
+        localStorage.setItem('user', val.username);
         localStorage.setItem('isLoggedin', 'true');
     }
 }

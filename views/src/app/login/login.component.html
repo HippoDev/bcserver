@@ -3,13 +3,13 @@
         <div class="col-md-4">
             <img src="assets/images/logo.png" width="150px" class="user-avatar" />
             <h1>SB Admin BS4 Angular5</h1>
-            <form role="form">
+            <form role="form" [formGroup]="form" (submit)="onLoggedin(form.value)">
                 <div class="form-content">
                     <div class="form-group">
-                        <input #username type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Username">
+                        <input formControlName="username" type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Username">
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/history']" (click)="onLoggedin()"> Log in </a>
+                <button type="submit" class="btn rounded-btn" > Log in </button>
             </form>
         </div>
     </div>
