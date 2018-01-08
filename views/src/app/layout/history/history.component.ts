@@ -34,9 +34,11 @@ export class HistoryComponent implements OnInit {
             to : form.to
         }
         this._HistoryService.getHistory(obj).subscribe(res=>{
-
-            this.historys = res.Txn.reverse();
-            console.log(res.Txn);
+            if(res){
+                this.historys = res.Txn.reverse();
+            }else{
+                this.historys = null;
+            }
         });
         
     }
