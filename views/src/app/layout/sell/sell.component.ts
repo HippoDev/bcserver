@@ -48,9 +48,14 @@ export class SellComponent implements OnInit {
                 "id": 100
             };
 
-        this._SellService.sell(json).subscribe((res)=>{
+        this._SellService.sell(json).subscribe((res) => {
             console.log(res);
             this.sellForm.reset();
+            alert('complete');
+            location.reload();
+        }, (err) => {
+            console.log("error");
+            alert('error');
         });
     }
 
